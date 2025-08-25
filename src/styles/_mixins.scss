@@ -1,0 +1,58 @@
+/* ----- Layout ----- */
+@mixin container {
+  width: min(92%, #{$container-max});
+  margin-inline: auto;
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin flex-between($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $gap;
+}
+
+/* ----- Typography ----- */
+/* Fluid type between two sizes across a viewport range */
+@mixin fluid-type($min, $max, $vw-min: 360, $vw-max: 1280) {
+  font-size: clamp(#{$min}, calc(#{$min} + (#{$max} - #{$min}) * ((100vw - #{$vw-min}px) / (#{$vw-max} - #{$vw-min}))), #{$max});
+}
+
+/* ----- Buttons ----- */
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  padding: 0.875rem 1.25rem;
+  border-radius: $radius-6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: $primary;
+  color: $white;
+  box-shadow: $shadow-lg;
+
+  &:hover { background: $primary-600; transform: translateY(-1px); }
+  &:active { transform: translateY(0); }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  border: 2px solid $primary;
+  color: $primary;
+  background: transparent;
+
+  &:hover { background: $primary; color: $white; }
+}
