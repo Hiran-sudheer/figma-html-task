@@ -1,0 +1,26 @@
+/* ----- Base & Reset Styles ----- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // Makes layout math much easier
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  color: $ink-700;
+  background-color: $bg-light;
+  -webkit-font-smoothing: antialiased; // Improves font rendering
+  -moz-osx-font-smoothing: grayscale; // Improves font rendering
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
