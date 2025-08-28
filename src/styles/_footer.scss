@@ -1,0 +1,134 @@
+// src/styles/_footer.scss
+
+.site-footer {
+  background: linear-gradient(180deg, #E0F7FA 0%, #D1F3F8 100%);
+  color: $ink-700;
+  font-size: $fs-body;
+}
+
+.footer__container {
+  @include container;
+  padding-top: $space-16;
+}
+
+.footer__main {
+  display: grid;
+  gap: $space-8;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 850px) {
+    grid-template-columns: repeat(4, 1fr);
+    .footer__col--brand { grid-column: span 4; text-align: center; }
+  }
+
+  @include respond-to($bp-lg) {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr; 
+    .footer__col--brand { grid-column: auto; text-align: left; }
+  }
+}
+
+.footer__logo {
+  max-width: 150px;
+  margin-bottom: $space-4;
+}
+
+.footer__description {
+  line-height: 1.6;
+  max-width: 250px;
+  margin-bottom: $space-6;
+}
+
+.footer__socials {
+  display: flex;
+  gap: $space-4;
+  a {
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $primary;
+    color: $white;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.footer__col-title {
+  font-size: 1.125rem;
+  font-weight: $fw-semibold;
+  color: $ink-900;
+  margin-bottom: $space-6;
+}
+
+.footer__link-list,
+.footer__contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.footer__link-list a,
+.footer__contact-list a {
+  color: $ink-700;
+  text-decoration: none;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.footer__contact-list li {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  svg {
+    color: $primary;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+}
+
+.badge {
+  display: inline-block;
+  background-color: #d1fae5;
+  color: #065f46;
+  font-size: 0.75rem;
+  font-weight: $fw-medium;
+  padding: 2px 8px;
+  border-radius: $radius-pill;
+  margin-left: $space-2;
+}
+
+.footer__chrome-badge {
+  margin-top: $space-6;
+  max-width: 150px;
+}
+
+.footer__sub {
+  margin-top: $space-12;
+  padding-bottom: $space-8;
+  text-align: center;
+  font-size: $fs-small;
+  color: $ink-600;
+
+  .footer__disclaimer {
+    max-width: 800px;
+    margin-inline: auto;
+    line-height: 1.5;
+  }
+  .footer__divider {
+    border: none;
+    height: 1px;
+    background-color: #8D8D8D94;
+    margin-block: $space-6;
+  }
+}
