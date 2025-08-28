@@ -1,5 +1,5 @@
 import "../styles/_header.scss";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Logo.png";
 import { FaAngleDown } from "react-icons/fa";
 import { CiLogin } from "react-icons/ci";
 import { useState } from "react";
