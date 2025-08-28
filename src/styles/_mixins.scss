@@ -18,10 +18,12 @@
   gap: $gap;
 }
 
-/* ----- Typography ----- */
-/* Fluid type between two sizes across a viewport range */
-@mixin fluid-type($min, $max, $vw-min: 360, $vw-max: 1280) {
-  font-size: clamp(#{$min}, calc(#{$min} + (#{$max} - #{$min}) * ((100vw - #{$vw-min}px) / (#{$vw-max} - #{$vw-min}))), #{$max});
+/* ----- Responsive Helper ----- */
+
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
 }
 
 /* ----- Buttons ----- */
@@ -31,28 +33,31 @@
   justify-content: center;
   gap: $space-3;
   padding: 0.875rem 1.25rem;
-  border-radius: $radius-6;
-  font-weight: 600;
+  border-radius: $radius-md;
+  font-weight: $fw-semibold;
   text-decoration: none;
   transition: all .25s ease;
   white-space: nowrap;
+  border: none;
 }
 
-@mixin btn-primary {
-  @include btn-base;
-  background: $primary;
-  color: $white;
-  box-shadow: $shadow-lg;
-
-  &:hover { background: $primary-600; transform: translateY(-1px); }
-  &:active { transform: translateY(0); }
+/* ----- Brand Effects (Essential for Figma Design) ----- */
+// Creates the gradient text effect seen on "Both Ways"
+@mixin brand-gradient-text {
+  background: linear-gradient(90deg, #5ED3FF, #6EC6FE, #EB65F4, #FD58F2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@mixin btn-outline {
-  @include btn-base;
-  border: 2px solid $primary;
-  color: $primary;
-  background: transparent;
-
-  &:hover { background: $primary; color: $white; }
+// Creates the gradient panel for the "Works with" section
+@mixin gradient-panel {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-6;
+  background: linear-gradient(90deg, #5ED3FF, #6EC6FE, #EB65F4, #FD58F2);
+  border-radius: $radius-lg;
+  padding: $space-4 $space-8;
+  color: $ink-900;
+  font-weight: $fw-semibold;
 }
