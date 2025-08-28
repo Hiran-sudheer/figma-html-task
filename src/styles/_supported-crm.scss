@@ -1,0 +1,90 @@
+// src/styles/_supported-crm.scss
+
+.supported-crm {
+  padding-block: $space-20;
+  background: linear-gradient(180deg, $bg-white 0%, #F4F8FF 100%); // Subtle gradient background
+  position: relative;
+  overflow: hidden;
+  .message{
+    position: relative;
+    top: -2px;
+    left: 580px;
+    z-index: 1;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .collaboration{
+    position: relative;
+    top: 130px;
+    left: 1280px;
+    z-index: 1;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  &__header {
+    max-width: 750px;
+    margin-inline: auto;
+    margin-bottom: $space-3;
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: $fw-semibold;
+    color: $ink-900;
+    margin-bottom: $space-4;
+  }
+
+  &__subheading {
+    font-size: 1.125rem;
+    color: $ink-700;
+    line-height: 1.6;
+  }
+
+  &__graphic {
+    
+    background-image: url('./../assets/supported-crm/crm.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 1100px;
+    height: 600px; 
+    margin-inline: auto;
+    // margin-bottom: $space-12;
+    
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+    @media (max-width: 480px) {
+      height: 300px;
+    }
+  }
+
+  &__cta {
+    .btn-cta {
+      @include btn-base;
+      background: $accent-green;
+      color: $ink-900;
+      font-weight: $fw-bold;
+      font-size: 1.125rem;
+      padding: $space-4 $space-8;
+      border-radius: $radius-md;
+      &:hover {
+        background: darken($accent-green, 8%);
+      }
+    }
+  }
+}
