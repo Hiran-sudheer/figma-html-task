@@ -4,7 +4,7 @@ import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { MdOutlineMail, MdOutlinePhone, MdOutlineHelpOutline } from 'react-icons/md';
 
-import logo from './../assets/logo.png';
+import logo from './../assets/Logo.png';
 import chromeBadge from './../assets/footer/link.png';
 
 const Footer = () => {
