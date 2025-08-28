@@ -57,16 +57,17 @@
     position: relative; 
     overflow: visible; 
 
-    // Adds the connecting lines between cards on desktop
+    
     &:not(:last-child)::after {
       content: '';
       display: none; 
       @include respond-to($bp-lg) {
         display: block;
         position: absolute;
-        top: 30px;
-        right: -($space-8 * 1.5);
-        width: 100px;
+        z-index: -1;
+        top: 180px;
+        right: -($space-8 * 8);
+        width: 500px;
         height: 20px;
         background-image: url('../assets/icons/connecting-line.png');
         background-repeat: no-repeat;

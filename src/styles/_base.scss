@@ -24,3 +24,26 @@ svg {
   max-width: 100%;
   display: block;
 }
+.decorative-sphere-container {
+  width: 100%;
+  height: 0;
+  position: relative;
+  z-index: 5;
+  
+}
+
+.decorative-sphere {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  transform: translateY(-50%);
+  width: 120px;
+  opacity: 0.8;
+
+}
+.bot-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
