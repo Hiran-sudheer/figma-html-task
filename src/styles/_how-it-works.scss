@@ -1,4 +1,5 @@
-// src/styles/_how-it-works.scss
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .how-it-works {
   background-color: #EAEFFA;

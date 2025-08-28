@@ -1,9 +1,10 @@
+@use 'variables' as *;
+@use 'mixins' as *;
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 @import 'swiper/css';
 
-@import "variables";
-@import "mixins";
+
 @import 'base';
 @import "header";
 @import "hero";

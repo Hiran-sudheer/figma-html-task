@@ -1,4 +1,5 @@
-// src/styles/_footer.scss
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .site-footer {
   background: linear-gradient(180deg, #E0F7FA 0%, #D1F3F8 100%);

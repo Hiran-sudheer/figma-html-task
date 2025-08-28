@@ -1,4 +1,5 @@
-// src/styles/_solutions.scss
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .solutions {
   background-color: $bg-white;

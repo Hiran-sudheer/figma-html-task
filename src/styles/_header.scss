@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .header {
   background: $bg-white;
@@ -18,15 +18,15 @@
   }
 
   .nav {
-    display: none; // Hidden on mobile by default
+    display: none; 
   }
 
   .header__actions {
-    display: none; // Hidden on mobile by default
+    display: none;
   }
 
   .hamburger {
-    display: flex; // Visible on mobile by default
+    display: flex;
     flex-direction: column;
     gap: 4px;
     background: none;

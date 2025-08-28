@@ -1,4 +1,5 @@
-// src/styles/_comparison.scss
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .comparison {
   padding-block: $space-20;

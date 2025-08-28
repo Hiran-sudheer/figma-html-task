@@ -1,8 +1,9 @@
-// src/styles/_supported-crm.scss
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .supported-crm {
   padding-block: $space-20;
-  background: linear-gradient(180deg, $bg-white 0%, #F4F8FF 100%); // Subtle gradient background
+  background: linear-gradient(180deg, $bg-white 0%, #F4F8FF 100%);
   position: relative;
   overflow: hidden;
   .message{
