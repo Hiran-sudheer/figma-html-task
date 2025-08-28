@@ -1,0 +1,119 @@
+@import "variables";
+@import "mixins";
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: $font-stack;
+
+  .container {
+    @include container;
+    @include flex-between;
+    padding: 1rem 0;
+  }
+
+  .logo img {
+    max-height: 40px;
+  }
+
+  /* Nav */
+  .nav__list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    li a {
+      color: $ink-900;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      &:hover {
+        color: $primary;
+      }
+
+      .nav__icon {
+        font-size: 0.8rem;
+        margin-top: 2px; // ✅ align arrow properly
+      }
+    }
+  }
+
+  /* Actions */
+  .header__actions {
+    display: flex;
+    gap: 1rem;
+
+    .btn {
+      @include btn-base;
+
+      &--primary {
+        background: $primary;
+        color: #fff;
+        &:hover { background: $primary-600; }
+      }
+
+      &--outline {
+        border: 1px solid $primary;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        &:hover {
+          background: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 22px;
+      height: 2px;
+      background: $ink-900;
+      border-radius: 2px;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .nav {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+
+      &--open {
+        display: block;
+      }
+
+      .nav__list {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+      }
+    }
+
+    .header__actions {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+// src/styles/_how-it-works.scss
+
+.how-it-works {
+  background-color: #EAEFFA;
+  padding-block: $space-10;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+
+
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    text-align: start;
+    margin-bottom: $space-16;
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: $fw-semibold;
+    color: $ink-900;
+    margin-bottom: $space-2;
+  }
+
+  &__subheading {
+    font-size: 1.125rem;
+    color: $ink-700;
+    strong {
+      font-weight: $fw-semibold;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: $space-12 $space-8;
+    grid-template-columns: 1fr; 
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to($bp-lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .step-card {
+    background-color: $bg-white;
+    border: $border-light;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-soft;
+    padding: $space-8;
+    position: relative; 
+    overflow: visible; 
+
+    // Adds the connecting lines between cards on desktop
+    &:not(:last-child)::after {
+      content: '';
+      display: none; 
+      @include respond-to($bp-lg) {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: -($space-8 * 1.5);
+        width: 100px;
+        height: 20px;
+        background-image: url('../assets/icons/connecting-line.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &__number {
+      position: absolute;
+      top: 10px;
+      left: 100px;
+      font-family: 'Sriracha', cursive;
+      font-size: 7.1rem;
+      font-weight: 400;
+      line-height: 1; 
+      color: $primary;
+      z-index: 0;
+    }
+
+    &__content {
+      position: relative;
+      z-index: 1;
+      top: 40px;
+    }
+
+    &__title {
+      font-size: 1.25rem;
+      font-weight: $fw-semibold;
+      color: $ink-900;
+      margin-top: $space-12;
+      margin-bottom: $space-2;
+    }
+
+    &__description {
+      color: $ink-600;
+      line-height: 1.6;
+      margin-bottom: $space-6;
+    }
+    
+    &__image {
+      border: $border-light;
+      border-radius: $radius-md;
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: $space-16;
+
+    .btn-cta {
+      @include btn-base;
+      background: $accent-green;
+      color: $ink-900;
+      font-weight: $fw-bold;
+      font-size: 1.125rem;
+      padding: $space-4 $space-8;
+      border-radius: $radius-md;
+      &:hover {
+        background: darken($accent-green, 8%);
+      }
+    }
+  }
+}
